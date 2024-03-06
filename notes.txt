@@ -11,3 +11,10 @@ https://help.ubuntu.ru/wiki/%D0%BA%D0%B0%D0%BA_%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0
 https://qa.yodo.im/t/kak-mne-ustanovit-nomodeset-posle-togo-kak-ya-uzhe-ustanovil-ubuntu/828/3
 
 https://www.linux.org.ru/forum/desktop/15578465
+
+
+повысить привелегии для текущего пользователя вводим
+su - 
+далее пароль рута. 
+
+Для защиты root разрешить доступ по ssh для root только с опредленного ip и по сертификату без пароля. так же сменить порт ssh. 
