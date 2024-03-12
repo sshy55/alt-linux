@@ -48,3 +48,35 @@ ln -s /opt/MegaRAID/MegaCli/MegaCli64 /usr/local/bin/megacli
 https://habr.com/ru/companies/first/articles/682138/
 
 megacli -v
+
+Проверка состояния массива RAID 
+Эта команда покажет важную информацию о виртуальном дисковом устройстве (RAID-массиве): 
+# megacli -LDInfo -LALL -aALL
+
+Если массив находится в оптимальном состоянии, и данные останутся в сохранности при выходе из строя одного из дисков, то значение параметра State будет равно Optimal.
+
+
+Для проверки состояния аккумулятора используйте следующую команду: 
+megacli -AdpBbuCmd -aAll
+
+Прежде всего, параметр Battery State должен быть равен Optimal. 
+
+Просмотр свойств контроллера 
+# megacli -AdpAllinfo -aAll
+
+Просмотр свойств дисков 
+
+# megacli -PDList -aAll
+
+Параметр Firmware state очень важен — анализируя его, можно узнать состояние диска: 
+# megacli -PDList -aAll | grep "Firmware state"
+
+
+
+Для снятия смарта нужно использовать команду
+
+smartctl -d megaraid,<Device Id входящего в состав диска> -a /dev/<Имя диска>
+
+https://itdwarff.ru/ustanovka-megacli-dlya-upravleniya-kontrollerom-megareid-na-baze-proxmox-debian/
+
+Пример  smartctl -d megaraid,4 -a /dev/sda или smartctl -d megaraid,5 -a /dev/sdb
