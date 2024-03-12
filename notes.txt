@@ -18,3 +18,33 @@ su -
 далее пароль рута. 
 
 Для защиты root разрешить доступ по ssh для root только с опредленного ip и по сертификату без пароля. так же сменить порт ssh. 
+
+
+Про SMART 
+
+шпаргалка, но так себе 
+https://wiki.colobridge.net/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B5/%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B/%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0_%D0%BF%D0%BE_megacli
+
+Установка megacli
+
+https://micronode.ru/wiki/storage/megacli/install_alt_linux
+
+Скачать дистрибутив на сервер по ссылке с сайта Broadcom или с данного сайта:  https://micronode.ru/_media/wiki/storage/8.07.14_megacli.zip
+
+Распаковать полученный дистрибутив на сервере, командой: 
+unzip 8-07-14_MegaCLI.zip
+
+Установить пакет используя команду apt-get 
+apt-get install ./Linux/MegaCli-8.07.14-1.noarch.rpm
+
+Создать псевдоним для добного запуска 
+
+ln -s /opt/MegaRAID/MegaCli/MegaCli64 /usr/local/bin/megacli
+
+
+
+Далее можно через командную строку получить всю информацию и поставить заббикс агент
+
+https://habr.com/ru/companies/first/articles/682138/
+
+megacli -v
